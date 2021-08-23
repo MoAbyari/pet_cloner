@@ -52,6 +52,15 @@ button.search{
   background-size: contain;
 }
 
+.logoVert{
+  background-image:url(../logoStacked.png);
+  height: 112px;
+  width: 100%;
+  max-width: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 .secondNavRow{
   display: flex;

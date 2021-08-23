@@ -1,6 +1,8 @@
 import './Water.css'
 import './App.css';
 import '../logoHoriz.png';
+import '../logoHoriz.png';
+
 import '../icon1.png';
 import '../icon2.png';
 import '../icon3.png';
@@ -53,6 +55,11 @@ function LandingPage() {
          </section>
          <section class="outline formStoriesRow">
             <div class="formCollumn outline">
+               <div class="formHeader">
+                  <img class="logoVert"/>
+                  <h3>Subscribe to our newsletter today</h3>
+                  <p>For all the latest scientific advances, EvaGen stories and events.  </p>
+               </div>
                <Subscribe /> 
             </div>
             <div class="storiesCollumn ">
