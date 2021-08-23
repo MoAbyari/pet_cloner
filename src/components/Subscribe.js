@@ -6,18 +6,6 @@ import React, {Component} from 'react';
 const database = db.collection("Users");
 
 
-
-class Signup {
-  constructor(firstName, lastName, email, ausState, dog, cat) 
-     {  this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.ausState = ausState;
-        this.dog = dog;
-        this.cat = cat;
-  }
-}
-
 class Subscribe extends Component {
 
   constructor() {
@@ -35,20 +23,20 @@ class Subscribe extends Component {
 
     _submitHandler(e) {
       e.preventDefault();
-      const formEntry = new Signup (
-          this.state.firstName, 
-          this.state.lastName, 
-          this.state.email, 
-          this.state.ausState, 
-          this.state.dog, 
-          this.state.cat
-      )
+      const formEntry = {
+        firstName : this.state.firstName,
+        lastName : this.state.lastName, 
+        email : this.state.email, 
+        ausState : this.state.ausState, 
+        dog : this.state.dog,
+        cat : this.state.cat,
+      }
       console.log(formEntry)
       database.doc().set({...formEntry});
     }
 
     // https://codepen.io/pen/?&editors=001 
-    
+
   form = () => {
     return(
       <div>
