@@ -1,7 +1,11 @@
 import './App.css';
 import { db } from '../services/firebase.js'
+import validate from '../services/validate.js';
+
 import React, {Component} from 'react';
 const database = db.collection("Users");
+
+
 
 class Signup {
   constructor(firstName, lastName, email, ausState, dog, cat) 
@@ -43,7 +47,8 @@ class Subscribe extends Component {
       database.doc().set({...formEntry});
     }
 
- 
+    // https://codepen.io/pen/?&editors=001 
+    
   form = () => {
     return(
       <div>
