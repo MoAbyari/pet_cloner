@@ -9,6 +9,6 @@ const firebaseApp = firebase.initializeApp({
    appId: "1:622636761034:web:4f1d7fed79a21956411933"
 })
 
-const db   = firebaseApp.firestore()
+const db = firebaseApp.firestore()
 
 export {db}
