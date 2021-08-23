@@ -3,31 +3,51 @@ import { db } from '../services/firebase.js'
 import React, {Component} from 'react';
 const database = db.collection("Users");
 
+class Signup {
+  constructor(firstName, lastName, email, ausState, dog, cat) 
+     {  this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.ausState = ausState;
+        this.dog = dog;
+        this.cat = cat;
+  }
+}
+
 class Subscribe extends Component {
 
   constructor() {
-  super();
-    this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      state: '',
-      dog: false,
-      cat:false
+    super();
+      this.state = {
+        firstName: ' ',
+        lastName: ' ',
+        email: ' ',
+        ausState: ' ',
+        dog: false,
+        cat: false
+      }
+      this._submitHandler = this._submitHandler.bind(this);
     }
-  }
 
-// function _submitHandler(){
-//    const formEntry = new Signup (
-//       ("May", "Jones","email@address.com","New South Wales", false, true)
-//    )
-//    database.doc().set({...formEntry});
-// }
+    _submitHandler(e) {
+      e.preventDefault();
+      const formEntry = new Signup (
+          this.state.firstName, 
+          this.state.lastName, 
+          this.state.email, 
+          this.state.ausState, 
+          this.state.dog, 
+          this.state.cat
+      )
+      console.log(formEntry)
+      database.doc().set({...formEntry});
+    }
 
+ 
   form = () => {
     return(
       <div>
-        <form onSubmit={ this._submitHandler }>
+        <form onSubmit={this._submitHandler}>
           FirstName
           <input
             type="text"
