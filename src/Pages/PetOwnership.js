@@ -13,15 +13,15 @@ class PetOwnership extends Component {
     const dogOwner = user.filter(user => user.dog == true).length;
 
     return (
-      <div>
-        <div style={{marginRight:"70px"}}className="site-card-border-less-wrapper">
+      <div className="border-less-wrapper">
+        <h3 style={{textAlign:"center"}}>Pet ownership</h3>
+        <div className="site-card-border-less-wrapper">
             <Pie
               data={
                 {
                 labels: ['Cat', 'Dog', 'Both'],
                  datasets: [
                    {
-                   label: 'Owners',
                    backgroundColor: ['#48a4e7','#0087e9','#0467b0'],
                    borderColor: 'rgba(0,0,0,1)',
                    borderWidth: 2,
@@ -47,11 +47,11 @@ class PetOwnership extends Component {
               }}
             />
         </div>
-        <div>
-            <p><strong>Total Cat:</strong> { catOwner }</p>
-            <p><strong>Total Dog:</strong> { dogOwner }</p>
-            <p><strong>Total :</strong> { dogOwner + catOwner }</p>
-        </div>
+          <div className="chart-numbers">
+              <h4><weak>Total Cat:</weak> { catOwner }</h4>
+              <h4><strong>Total Dog:</strong> { dogOwner }</h4>
+              <h4><strong>Total :</strong> { dogOwner + catOwner }</h4>
+          </div>
 
       </div>
 

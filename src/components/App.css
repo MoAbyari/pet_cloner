@@ -303,11 +303,23 @@ h4, h3, h2{
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  margin-right: 0;
 }
 
 .site-card-border-less-wrapper canvas{
-  height: 250px;
-  width: 300px;
+  display: block;
+  box-sizing: border-box;
+  height: 240px;
+  width: 100%;
+}
+.site-card-border-less-wrapper {
+  width: 100%;
+  /* border:solid 1px black; */
+}
+.border-less-wrapper {
+  width: 100%;
+  border:solid 1px black;
+  border-radius: 9.10769px;
 }
 
 .activity-overview-header {
@@ -346,6 +358,9 @@ h4, h3, h2{
 }
 
 .chart-container{
+  max-width: 970px;
+  gap: 20px;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -358,7 +373,6 @@ h4, h3, h2{
   height:20px;
 }
 
-
 .ant-input, .ant-select-selector, .ant-checkbox-inner{
   border: solid 1px black!important;
   border-radius: 1px;
@@ -368,9 +382,14 @@ h4, h3, h2{
  text-align: left;
 }
 
+.chart-numbers{
+  padding:20px;
+}
+
 .anticon-down{
   color:black;
 }
+
 
 p, label{
   font-size:16px!important;

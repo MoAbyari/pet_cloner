@@ -16,7 +16,7 @@ class ActivityOverview extends Component {
     return (
       <div className="activity-conrainer">
         <h1 className="activity-overview-header">EvaGen Newsletter Dashboard</h1>
-        <p className="acitivity-overview-subheader">Subscriber activity overview</p>
+        <h3 className="acitivity-overview-subheader">Subscriber activity overview</h3>
         <div className="site-border-less-wrapper">
           <Activity numberOfUsers= {totalSubscribers} text="TOTAL SUBSCRIBERS"/>
           <Activity numberOfUsers= {catOwner} text="Cat Owners"/>
