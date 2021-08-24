@@ -1,32 +1,132 @@
-@import '~antd/dist/antd.css';
-.App {
-  text-align: center;
-}
+* {
+  box-sizing: border-box;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body{
+    max-width: 1130px!important;
+    margin: 0 auto;
   }
+
+contianer{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav, nav div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+nav div *{
+  padding:10px;
+
+}
+
+section{
+
+}
+
+.outline{
+  border:solid 1px black;
+}
+
+button.search{
+  font-size: 30px;
+  padding: 0 15px 3px 15px;
+}
+
+.logoHoriz{
+  background-image:url(../logoHoriz.png);
+  height: 112px;
+  width: 100%;
+  max-width: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.logoVert{
+  background-image:url(../logoStacked.png);
+  height: 112px;
+  width: 100%;
+  max-width: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.secondNavRow{
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+}
+
+
+.headlineRow{
+    background-color: #efefef;
+    color: dimgray;
+    height: 400px;
+    max-height:40vw;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.padding{
+  padding:15px 20px 15px 20px;
+}
+
+.formStoriesRow{
+  display: flex;
+
+}
+
+.formCollumn{
+  width: 100%;
+  flex-grow: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  border-top: none;
+  border-left: none;
 }
 
-.App-link {
-  color: #61dafb;
+.storiesCollumn{
+  width: 100%;
+  padding:20px;
+  flex-grow:5;
+}
+
+
+a{
+  display: inline-block;
+  padding: 5px 8px;
+  white-space: nowrap;
+  width: fit-content;
+  border-radius: 5px;
+  text-decoration: none!important;
+}
+
+
+a:hover{
+  background: #eeeeee;
+}
+
+a.lessPadding{
+  padding: 1px 1px;
+}
+
+.secondNavRow a {
+  font-weight: 600;
+  color:#00AEEF;
 }
 .subscribe-container{
   padding:16px;
@@ -38,11 +138,79 @@
   justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 650px) {
+  .search {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .menu{
+    justify-content: space-between;
+    width: 100%;
   }
+  .secondNavRow{
+    display: none;
+  }
+  .boxRow{
+    flex-wrap: wrap;
+  }
+  .formStoriesRow{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+  }
+
+}
+
+
+
+.boxGrid{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap:20px;
+}
+
+.boxRow{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  align-content: stretch;
+  justify-content: space-evenly;
+  gap:20px;
+
+}
+
+.box{
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-width: 100px;
+}
+
+.icon1{
+  background-image:url(../icon1.png);
+
+}
+
+.icon2{
+  background-image:url(../icon2.png);
+
+}
+
+.icon3{
+  background-image:url(../icon3.png);
+
+}
+
+.icon4{
+  background-image:url(../icon4.png);
+
+}
+
+
+h4, h3, h2{
+  margin-top:12px!important;
 }
