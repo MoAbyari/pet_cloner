@@ -3,12 +3,8 @@
 * {
   box-sizing: border-box;
 }
-<<<<<<< HEAD
-body{
-=======
 
-body{    
->>>>>>> 6afe41857cefdaf69137023f134b83e9cfae31a6
+body{
     max-width: 1130px!important;
     margin: 0 auto;
   }

@@ -127,7 +127,7 @@ class Subscribe extends Component {
               name="agreement"
               valuePropName="checked"
               rules={[
-                { required: true, message: 'Please agree Motherfucker!' }
+                { required: true, message: 'Please agree T&C' }
               ]}
             >
             <Checkbox>
@@ -141,18 +141,18 @@ class Subscribe extends Component {
   }
 
   confirmation = () => {
-    return(      
+    return(
       <div className= "submitted-container">
         <div class="logoVert"> </div>
         <h2>Thank you for subscribing</h2>
-      </div>    
+      </div>
     )
   }
 
   render() {
       return(
         <div>
-          { this.state.submitted ?  
+          { this.state.submitted ?
               this.confirmation() : this.form()
           }
         </div>
