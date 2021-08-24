@@ -9,8 +9,7 @@ class SubscriberChart extends Component {
    super(props);
 
    this.state = {
-     labels: ['NSW', 'TAZ', 'VIC',
-           'TA', 'QLD', 'WA','SA'],
+     labels: ['NSW', 'TAZ', 'VIC', 'QLD', 'WA','SA'],
       datasets: [
         {
           label: 'Subscribe',
