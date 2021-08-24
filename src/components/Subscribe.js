@@ -1,91 +1,132 @@
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+
 import './App.css';
 import { db } from '../services/firebase.js'
 import validate from '../services/validate.js';
 
 import React, {Component} from 'react';
 const database = db.collection("Users");
+const { Option } = Select;
 
 
 class Subscribe extends Component {
 
-  constructor(){
-    super();
-      this.state = {
-        firstName: ' ',
-        lastName: ' ',
-        email: ' ',
-        ausState: ' ',
-        dog: false,
-        cat: false
-      }
-    }
 
-    _submitHandler = (e) => {
-      e.preventDefault();
+    onFinish = (values) => {
+      console.log(values);
       db.collection("Users").doc()
       .set({
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        ausState:this.state.ausState,
-        dog: this.state.dog,
-        cat: this.state.cat},
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        ausState:values.ausState,
+        dog: values.dog,
+        cat: values.cat},
         {merge:true})
+
     }
-
-  _renderFirstName = (e) => {
-    this.setState({firstName: e.target.value});
-  }
-  _renderLastName = (e) => {
-    this.setState({lastName: e.target.value});
-  }
-  _renderEmail = (e) => {
-    this.setState({email: e.target.value});
-  }
-  _renderAuState = (e) => {
-    this.setState({ausState: e.target.value});
-  }
-
-  _renderDog = (e) => {
-    this.setState({dog: (!this.state.dog)});
-  }
-
-  _renderCat = (e) => {
-    this.setState({cat: (!this.state.cat)});
-  }
 
 
   form = () => {
     return(
-      <div>
-        <form onSubmit={this._submitHandler}>
-          First Name
-          <input
-            type="text"
-            onChange={ this._renderFirstName }
-          />
-          Last Name
-          <input
-            type="text"
-            onChange={ this._renderLastName }
-          />
-          email
-          <input
-            type="text"
-            onChange= { this._renderEmail }
-          />
-          State
-          <input
-            type="text"
-            onChange= { this._renderAuState }
-          />
-          Dog
-          <input type="checkbox" onChange= { this._renderDog }/>
-          Cat
-          <input type="checkbox" onChange= { this._renderCat }/>
-          <input type="submit" value="Subscribe" />
-        </form>
+      <div className= "subscribe-container">
+        <Form onFinish={this.onFinish}>
+          <Form.Item
+            name="firstName"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your first name'
+              }
+            ]}
+          >
+            <Input placeholder= "First Name"/>
+          </Form.Item>
+
+          <Form.Item
+            name="lastName"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your last name'
+              }
+            ]}
+          >
+            <Input placeholder= "last Name" />
+          </Form.Item>
+
+          <Form.Item
+            name="email"
+            rules={[
+            {
+            type: 'email',
+            message: 'The input is not valid E-mail!',
+            },
+            {
+            required: true,
+            message: 'Please input your E-mail!',
+            }
+            ]}
+          >
+          <Input placeholder= "E-mail"/>
+          </Form.Item>
+
+          <Form.Item
+            name="ausState"
+            rules={[{ required: true, message: 'Please select your state!' }]}
+          >
+            <Select placeholder="State">
+              <Option value="NSW">NSW</Option>
+              <Option value="VIC">VIC</Option>
+              <Option value="ACT">ACT</Option>
+              <Option value="WA">WA</Option>
+            </Select>
+          </Form.Item>
+
+          <div className="subscribe-checkboxes">
+            <Form.Item
+              name="dog"
+              valuePropName="checked"
+              rules={[
+                { required: true, message: 'Please select your state!' }
+              ]}
+            >
+              <Checkbox>
+                Dog
+              </Checkbox>
+            </Form.Item>
+
+              <Form.Item
+              name="cat"
+              valuePropName="checked"
+              rules={[
+                { required: true, message: 'Please select your state!' }
+              ]}
+            >
+              <Checkbox>
+              Cat
+              </Checkbox>
+            </Form.Item>
+          </div>
+            <Form.Item >
+              <Button type="primary" htmlType="submit">
+                Subscribe
+              </Button>
+            </Form.Item>
+
+            <Form.Item
+              name="agreement"
+              valuePropName="checked"
+              rules={[
+                { required: true, message: 'Please agree Motherfucker!' }
+              ]}
+            >
+            <Checkbox>
+              I give EVAGEN permission to use the above email address.
+            </Checkbox>
+            </Form.Item>
+            <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information see our Privacy Policy</p>
+        </Form>
       </div>
     )
   }

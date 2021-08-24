@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
@@ -26,6 +27,15 @@
 
 .App-link {
   color: #61dafb;
+}
+.subscribe-container{
+  padding:16px;
+
+}
+
+.subscribe-checkboxes{
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
