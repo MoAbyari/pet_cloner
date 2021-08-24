@@ -31,6 +31,7 @@ function LandingPage() {
                &nbsp; &nbsp;
                <button>Try for free</button>
             </div>
+            <div class="kebab"><svg width="35" height="35" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M47.25 40.5H6.75V36H47.25V40.5ZM47.25 29.25H6.75V24.75H47.25V29.25ZM47.25 18H6.75V13.5H47.25V18Z" fill="black"/> </svg></div>
          </nav>
          <section class="logoRow">
             <div class="logoHoriz"></div>

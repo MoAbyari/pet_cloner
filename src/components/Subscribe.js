@@ -141,7 +141,7 @@ class Subscribe extends Component {
               }]}
             >
             <Checkbox onClick={this._handleTCToggle}>
-              I give EVAGEN permission to use the above email address.
+              I agree to receive emails from EvaGen
             </Checkbox>
             </Form.Item>
             <Form.Item >
