@@ -1,6 +1,7 @@
 import { Card, Meta} from 'antd';
 import React, {Component} from 'react';
-import { map } from 'underscore';
+import {Bar} from 'react-chartjs-2';
+import SubscriberChart from './SubscriberChart';
 
 
 
@@ -36,6 +37,7 @@ class Subscribers extends Component {
     const userQLD = user.filter(user => user.ausState === "QLD");
       return userQLD.length
   }
+
   SubscribersInTAS =  () => {
     const user = this.props.allusers;
     const userTAS = user.filter(user => user.ausState === "TAS");
@@ -43,17 +45,18 @@ class Subscribers extends Component {
   }
 
 
-
   render () {
     return (
       <div className="site-card-border-less-wrapper">
         <Card title="Subscribers by State" bordered={false} style={{ width: 300 }}>
-          <p>NSW : { this.SubscribersInNSW()}</p>
-          <p>VIC : { this.SubscribersInVIC()}</p>
-          <p>SA : { this.SubscribersInSA()}</p>
-          <p>WA : { this.SubscribersInWA()}</p>
-          <p>QLD : { this.SubscribersInQLD()}</p>
-          <p>TAS : { this.SubscribersInTAS()}</p>
+          <SubscriberChart
+            NSW = { this.SubscribersInNSW()}
+            VIC = { this.SubscribersInVIC()}
+            TAS = { this.SubscribersInTAS()}
+            QLD = { this.SubscribersInQLD()}
+            SA = { this.SubscribersInSA()}
+            WA = { this.SubscribersInWA()}
+          />
         </Card>
       </div>
     )
