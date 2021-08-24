@@ -1,7 +1,8 @@
+@import '~antd/dist/antd.css';
 * {
   box-sizing: border-box;
-
 }
+
 body{
     max-width: 1130px!important;
     margin: 0 auto;

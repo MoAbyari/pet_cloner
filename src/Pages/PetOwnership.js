@@ -11,7 +11,7 @@ class PetOwnership extends Component {
     const user = this.props.allusers;
     return user.map( (u) => {
       return (
-        <h1> {u.ausState} </h1>
+        <h1> {u.email} </h1>
       )
     })
 
