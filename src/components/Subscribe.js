@@ -36,8 +36,32 @@ class Subscribe extends Component {
           </div>
 
         <Form onFinish={this.onFinish}>
+
+        <div className="subscribe-checkboxes">
+            <p>Owner of:</p>
+            <Form.Item
+              name="dog"
+              valuePropName="checked"
+            >
+              <Checkbox>
+                Dog
+              </Checkbox>
+            </Form.Item>
+
+              <Form.Item
+              name="cat"
+              valuePropName="checked"
+            >
+              <Checkbox>
+              Cat
+              </Checkbox>
+            </Form.Item>
+          </div>
+
           <Form.Item
             name="firstName"
+            label="First Name"
+            labelCol={{ span: 24 }}
             rules={[
               {
                 required: true,
@@ -45,11 +69,13 @@ class Subscribe extends Component {
               }
             ]}
           >
-            <Input placeholder= "First Name"/>
+            <Input />
           </Form.Item>
 
           <Form.Item
             name="lastName"
+            label="Last Name"
+            labelCol={{ span: 24 }}
             rules={[
               {
                 required: true,
@@ -57,11 +83,13 @@ class Subscribe extends Component {
               }
             ]}
           >
-            <Input placeholder= "last Name" />
+            <Input />
           </Form.Item>
 
           <Form.Item
             name="email"
+            label="Email Address"
+            labelCol={{ span: 24 }}
             rules={[
             {
             type: 'email',
@@ -73,14 +101,16 @@ class Subscribe extends Component {
             }
             ]}
           >
-          <Input placeholder= "E-mail"/>
+          <Input />
           </Form.Item>
 
           <Form.Item
             name="ausState"
+            label="State"
+            labelCol={{ span: 24 }}
             rules={[{ required: true, message: 'Please select your state!' }]}
           >
-            <Select placeholder="State">
+            <Select>
               <Option value="NSW">NSW</Option>
               <Option value="VIC">VIC</Option>
               <Option value="TAZ">TAZ</Option>
@@ -91,37 +121,6 @@ class Subscribe extends Component {
               <Option value="WA">WA</Option>
             </Select>
           </Form.Item>
-
-          <div className="subscribe-checkboxes">
-            <Form.Item
-              name="dog"
-              valuePropName="checked"
-              rules={[
-                { required: true, message: 'Please select your state!' }
-              ]}
-            >
-              <Checkbox>
-                Dog
-              </Checkbox>
-            </Form.Item>
-
-              <Form.Item
-              name="cat"
-              valuePropName="checked"
-              rules={[
-                { required: true, message: 'Please select your state!' }
-              ]}
-            >
-              <Checkbox>
-              Cat
-              </Checkbox>
-            </Form.Item>
-          </div>
-            <Form.Item >
-              <Button type="primary" htmlType="submit">
-                Subscribe
-              </Button>
-            </Form.Item>
 
             <Form.Item
               name="agreement"
@@ -134,7 +133,13 @@ class Subscribe extends Component {
               I give EVAGEN permission to use the above email address.
             </Checkbox>
             </Form.Item>
+            <Form.Item >
+              <Button type="primary" htmlType="submit">
+                Subscribe
+              </Button>
+            </Form.Item>
             <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information see our Privacy Policy</p>
+
         </Form>
       </div>
     )
