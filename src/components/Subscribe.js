@@ -114,9 +114,8 @@ class Subscribe extends Component {
           </Form.Item>
 
           <Form.Item
-            name="Australian State"
+            name="ausState"
             label="State"
-
             labelCol={{ span: 24 }}
             rules={[{ required: true, message: 'Please select your state!' }]}
           >
