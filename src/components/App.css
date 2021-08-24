@@ -162,6 +162,7 @@ a{
   width: fit-content;
   border-radius: 5px;
   text-decoration: none!important;
+  font-size:16px;
 }
 
 
@@ -280,4 +281,23 @@ h4, h3, h2{
 
 .ant-form-item-label > label{
   height:20px;
+}
+
+
+.ant-input, .ant-select-selector, .ant-checkbox-inner{
+  border: solid 1px black!important;
+  border-radius: 1px;
+}
+
+.ant-select-selector * {
+ text-align: left;
+}
+
+.anticon-down{
+  color:black;
+}
+
+p, label{
+  font-size:16px!important;
+
 }
