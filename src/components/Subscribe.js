@@ -9,7 +9,12 @@ const { Option } = Select;
 class Subscribe extends Component {
   constructor(props) {
     super(props);
-    this.state = {submitted: false};
+    this.state = {submitted: false, agreedToTC: false};
+    this._handleTCToggle = this._handleTCToggle.bind(this);
+  }
+
+  _handleTCToggle(){
+    this.setState({ agreedToTC: !this.state.agreedToTC } ) 
   }
 
     onFinish = (values) => {
@@ -26,6 +31,8 @@ class Subscribe extends Component {
       this.setState({submitted: true})
     }
 
+  
+  
   form = () => {
     return(
       <div className= "subscribe-container">
@@ -37,26 +44,28 @@ class Subscribe extends Component {
 
         <Form onFinish={this.onFinish}>
 
-        <div className="subscribe-checkboxes">
-            <p>Owner of:</p>
-            <Form.Item
-              name="dog"
-              valuePropName="checked"
-            >
-              <Checkbox>
-                Dog
-              </Checkbox>
-            </Form.Item>
-
+          <div className="subscribe-checkboxes">
+              <p>Owner of:</p>
               <Form.Item
-              name="cat"
-              valuePropName="checked"
-            >
-              <Checkbox>
-              Cat
-              </Checkbox>
-            </Form.Item>
-          </div>
+                name="dog"
+                initialValue={false}
+                valuePropName="checked"
+              >
+                <Checkbox>
+                  Dog
+                </Checkbox>
+              </Form.Item>
+
+                <Form.Item
+                name="cat"
+                initialValue={false}
+                valuePropName="checked"
+              >
+                <Checkbox >
+                Cat
+                </Checkbox>
+              </Form.Item>
+            </div>
 
           <Form.Item
             name="firstName"
@@ -125,18 +134,23 @@ class Subscribe extends Component {
             <Form.Item
               name="agreement"
               valuePropName="checked"
-              rules={[
-                { required: true, message: 'Please agree T&C' }
-              ]}
+              rules={[{
+                transform: value => (value || undefined),  
+                type: 'boolean',                           
+                message: 'Please agree the terms and conditions.', 
+              }]}
             >
-            <Checkbox>
+            <Checkbox onClick={this._handleTCToggle}>
               I give EVAGEN permission to use the above email address.
             </Checkbox>
             </Form.Item>
             <Form.Item >
-              <Button type="primary" htmlType="submit">
-                Subscribe
-              </Button>
+              { this.state.agreedToTC ?
+                <Button type="primary" htmlType="submit">Subscribe</Button> 
+                :
+                <Button type="primary" htmlType="submit" disabled>Subscribe</Button>
+              }
+              
             </Form.Item>
             <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information see our Privacy Policy</p>
 
