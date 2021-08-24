@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import ActivityOverview from '../Pages/ActivityOverview'
 import PetOwnership from '../Pages/PetOwnership'
 import Subscribers from '../Pages/Subscribers'
 import { db } from '../services/firebase.js'
@@ -24,15 +25,15 @@ class Dashboard extends Component {
       const userInfo = [];
       snapshot.forEach( (snap) => {
         userInfo.push(snap.data());
-        this.setState({allUsers: userInfo})
       });
+      this.setState({allUsers: userInfo})
     })
   }
-
 
   render() {
     return (
       <div>
+        <ActivityOverview allusers = {this.state.allUsers} />
         <PetOwnership allusers = {this.state.allUsers} />
         <Subscribers allusers = {this.state.allUsers} />
       </div>

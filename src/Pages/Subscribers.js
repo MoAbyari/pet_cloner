@@ -1,63 +1,58 @@
 import { Card, Meta} from 'antd';
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
-import SubscriberChart from './SubscriberChart';
 
 
 
 class Subscribers extends Component {
 
-
-
-  SubscribersInNSW =  () => {
-    const user = this.props.allusers;
-    const userNSW = user.filter(user => user.ausState === "NSW");
-      return userNSW.length
-  }
-
-  SubscribersInVIC =  () => {
-    const user = this.props.allusers;
-    const userVIC = user.filter(user => user.ausState === "VIC");
-      return userVIC.length
-  }
-
-  SubscribersInSA =  () => {
-    const user = this.props.allusers;
-    const userSA = user.filter(user => user.ausState === "SA");
-      return userSA.length
-  }
-
-  SubscribersInWA =  () => {
-    const user = this.props.allusers;
-    const userWA = user.filter(user => user.ausState === "WA");
-      return userWA.length
-  }
-  SubscribersInQLD =  () => {
-    const user = this.props.allusers;
-    const userQLD = user.filter(user => user.ausState === "QLD");
-      return userQLD.length
-  }
-
-  SubscribersInTAS =  () => {
-    const user = this.props.allusers;
-    const userTAS = user.filter(user => user.ausState === "TAS");
-      return userTAS.length
-  }
-
-
   render () {
+    const user = this.props.allusers;
+    const NSWuser = user.filter(user => user.ausState === "NSW").length;
+    const VICuser = user.filter(user => user.ausState === "VIC").length;
+    const QLDuser = user.filter(user => user.ausState === "OLD").length;
+    const WAuser = user.filter(user => user.ausState === "WA").length;
+    const SAuser = user.filter(user => user.ausState === "SA").length;
+    const TASuser = user.filter(user => user.ausState === "TAS").length;
+
     return (
       <div className="site-card-border-less-wrapper">
         <Card title="Subscribers by State" bordered={false} style={{ width: 300 }}>
-          <SubscriberChart
-            NSW = { this.SubscribersInNSW()}
-            VIC = { this.SubscribersInVIC()}
-            TAS = { this.SubscribersInTAS()}
-            QLD = { this.SubscribersInQLD()}
-            SA = { this.SubscribersInSA()}
-            WA = { this.SubscribersInWA()}
+          <Bar
+            data={
+              {
+              labels: ['NSW', 'VIC', 'QLD', 'WA','SA', 'TAS'],
+               datasets: [
+                 {
+                 label: 'Subscribe',
+                 backgroundColor: ['#89c3e8','#49aceb','#1697e9','#0178c3','#035990','#023d63'],
+                 borderColor: 'rgba(0,0,0,1)',
+                 borderWidth: 2,
+                 data: [
+                    NSWuser,
+                    VICuser,
+                    QLDuser,
+                    WAuser,
+                    SAuser,
+                    TASuser
+                 ]}
+               ]
+              }
+            }
+            options={{
+              title:{
+                display:true,
+                text:'Average Rainfall per month',
+                fontSize:20
+              },
+              legend:{
+                display:true,
+                position:'right'
+              }
+            }}
           />
         </Card>
+
       </div>
     )
   }
