@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import PetOwnership from '../Pages/PetOwnership'
 import { db } from '../services/firebase.js'
-import validate from '../services/validate.js';
 const database = db.collection("Users");
 
 
@@ -14,7 +13,6 @@ class Dashboard extends Component {
       allUsers: []
     }
   }
-
 
   componentDidMount() {
     this.fetchUsers();

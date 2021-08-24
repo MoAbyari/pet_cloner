@@ -1,9 +1,6 @@
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
-
 import './App.css';
 import { db } from '../services/firebase.js'
-import validate from '../services/validate.js';
-
 import React, {Component} from 'react';
 const database = db.collection("Users");
 const { Option } = Select;
