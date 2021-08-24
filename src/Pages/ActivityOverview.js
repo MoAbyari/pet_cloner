@@ -1,6 +1,6 @@
 import { Card, Meta} from 'antd';
 import React, {Component} from 'react';
-
+import Activity from "../components/Activity"
 
 
 class ActivityOverview extends Component {
@@ -10,17 +10,21 @@ class ActivityOverview extends Component {
     const totalSubscribers = user.filter(user => user.email).length;
     const catOwner = user.filter(user => user.cat == true).length;
     const dogOwner = user.filter(user => user.dog == true).length;
+    const dogCatOwner = catOwner + dogOwner
 
 
     return (
-      <div className="site-card-border-less-wrapper">
-        <Card title="Subscriber activity overview" bordered={false} style={{ width: 300 }}>
-          <p><strong>TOTAL SUBSCRIBERS:</strong> { totalSubscribers }</p>
-          <p><strong>Cat Owners:</strong> { catOwner }</p>
-          <p><strong>Dog Owners:</strong> { dogOwner }</p>
-          <p><strong>Own both Cat and Dog:</strong> { dogOwner + catOwner }</p>
-        </Card>
+      <div className="activity-conrainer">
+        <h1 className="activity-overview-header">EvaGen Newsletter Dashboard</h1>
+        <p className="acitivity-overview-subheader">Subscriber activity overview</p>
+        <div className="site-border-less-wrapper">
+          <Activity numberOfUsers= {totalSubscribers} text="TOTAL SUBSCRIBERS"/>
+          <Activity numberOfUsers= {catOwner} text="Cat Owners"/>
+          <Activity numberOfUsers= {dogOwner} text="Dog Owners"/>
+          <Activity numberOfUsers= {dogCatOwner} text="Own both Cat and Dog"/>
+        </div>
       </div>
+
     )
   }
 }

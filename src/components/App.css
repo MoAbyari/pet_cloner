@@ -277,6 +277,81 @@ h4, h3, h2{
 
 }
 
+.numberOfUsers{
+  width: 220px;
+  height: 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 11.3846px;
+  background: #ffffff;
+  border: 1.13846px solid #000000;
+  box-sizing: border-box;
+  border-radius: 9.10769px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+}
+.site-border-less-wrapper > div:first-child{
+  background-color: rgb(165, 173, 175);
+
+}
+.site-border-less-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.site-card-border-less-wrapper canvas{
+  height: 250px;
+  width: 300px;
+}
+
+.activity-overview-header {
+  font-family: Almarai;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 64px;
+  color: #000000;
+  text-align: center;
+}
+
+.acitivity-overview-subheader{
+  font-family: Almarai;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 64px;
+  color: #000000;
+}
+
+.numberOfUsers > h1{
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56.9231px;
+}
+.numberOfUsers > p{
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chart-container{
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-container{
+  padding: 20px;
+}
 
 .ant-form-item-label > label{
   height:20px;

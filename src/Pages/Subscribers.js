@@ -17,7 +17,6 @@ class Subscribers extends Component {
 
     return (
       <div className="site-card-border-less-wrapper">
-        <Card title="Subscribers by State" bordered={false} style={{ width: 300 }}>
           <Bar
             data={
               {
@@ -40,6 +39,7 @@ class Subscribers extends Component {
               }
             }
             options={{
+              maintainAspectRatio: false,
               title:{
                 display:true,
                 text:'Average Rainfall per month',
@@ -51,8 +51,6 @@ class Subscribers extends Component {
               }
             }}
           />
-        </Card>
-
       </div>
     )
   }

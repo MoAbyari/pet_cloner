@@ -32,10 +32,12 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="dashboard-container">
         <ActivityOverview allusers = {this.state.allUsers} />
-        <PetOwnership allusers = {this.state.allUsers} />
-        <Subscribers allusers = {this.state.allUsers} />
+        <div className="chart-container">
+          <PetOwnership allusers = {this.state.allUsers} />
+          <Subscribers allusers = {this.state.allUsers} />
+        </div>
       </div>
     )
   }
