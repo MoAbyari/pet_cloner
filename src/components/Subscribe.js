@@ -114,18 +114,19 @@ class Subscribe extends Component {
           </Form.Item>
 
           <Form.Item
-            name="ausState"
+            name="Australian State"
             label="State"
+
             labelCol={{ span: 24 }}
             rules={[{ required: true, message: 'Please select your state!' }]}
           >
             <Select>
-              <Option value="NSW">NSW</Option>
-              <Option value="VIC">VIC</Option>
-              <Option value="TAZ">TAZ</Option>
-              <Option value="QLD">QLD</Option>
-              <Option value="SA">SA</Option>
-              <Option value="WA">WA</Option>
+              <Option aria-label="New South Wales" value="NSW">NSW</Option>
+              <Option aria-label="Victoria" value="VIC">VIC</Option>
+              <Option aria-label="Tazmainia" value="TAZ">TAZ</Option>
+              <Option aria-label="Queensland" value="QLD">QLD</Option>
+              <Option aria-label="South Australia" value="SA">SA</Option>
+              <Option aria-label="Western Australia" value="WA">WA</Option>
             </Select>
           </Form.Item>
 

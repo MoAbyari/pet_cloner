@@ -276,6 +276,9 @@ h4, h3, h2{
   }
   .kebab *{ padding:0;}
 
+  .chart-container{
+    flex-wrap: wrap;
+  }
 }
 
 .numberOfUsers{
