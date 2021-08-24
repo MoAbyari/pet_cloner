@@ -1,9 +1,5 @@
-import { Card, Meta} from 'antd';
 import React, {Component} from 'react';
-import { map } from 'underscore';
 import {Pie} from 'react-chartjs-2';
-
-
 
 class PetOwnership extends Component {
 

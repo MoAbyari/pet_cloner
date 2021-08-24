@@ -1,4 +1,3 @@
-import { Card, Meta} from 'antd';
 import React, {Component} from 'react';
 
 

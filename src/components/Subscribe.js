@@ -14,7 +14,7 @@ class Subscribe extends Component {
   }
 
   _handleTCToggle(){
-    this.setState({ agreedToTC: !this.state.agreedToTC } ) 
+    this.setState({ agreedToTC: !this.state.agreedToTC } )
   }
 
     onFinish = (values) => {
@@ -31,8 +31,8 @@ class Subscribe extends Component {
       this.setState({submitted: true})
     }
 
-  
-  
+
+
   form = () => {
     return(
       <div className= "subscribe-container">
@@ -125,8 +125,6 @@ class Subscribe extends Component {
               <Option value="TAZ">TAZ</Option>
               <Option value="QLD">QLD</Option>
               <Option value="SA">SA</Option>
-              <Option value="NT">NT</Option>
-              <Option value="ACT">ACT</Option>
               <Option value="WA">WA</Option>
             </Select>
           </Form.Item>
@@ -135,9 +133,9 @@ class Subscribe extends Component {
               name="agreement"
               valuePropName="checked"
               rules={[{
-                transform: value => (value || undefined),  
-                type: 'boolean',                           
-                message: 'Please agree the terms and conditions.', 
+                transform: value => (value || undefined),
+                type: 'boolean',
+                message: 'Please agree the terms and conditions.',
               }]}
             >
             <Checkbox onClick={this._handleTCToggle}>
@@ -146,11 +144,11 @@ class Subscribe extends Component {
             </Form.Item>
             <Form.Item >
               { this.state.agreedToTC ?
-                <Button type="primary" htmlType="submit">Subscribe</Button> 
+                <Button type="primary" htmlType="submit">Subscribe</Button>
                 :
                 <Button type="primary" htmlType="submit" disabled>Subscribe</Button>
               }
-              
+
             </Form.Item>
             <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information see our Privacy Policy</p>
 

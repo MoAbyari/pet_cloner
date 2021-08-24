@@ -1,6 +1,5 @@
-import { Card, Meta} from 'antd';
 import React, {Component} from 'react';
-import Activity from "../components/Activity"
+import Activity from "./Activity"
 
 
 class ActivityOverview extends Component {
@@ -8,8 +7,8 @@ class ActivityOverview extends Component {
   render () {
     const user = this.props.allusers;
     const totalSubscribers = user.filter(user => user.email).length;
-    const catOwner = user.filter(user => user.cat == true).length;
-    const dogOwner = user.filter(user => user.dog == true).length;
+    const catOwner = user.filter(user => user.cat === true).length;
+    const dogOwner = user.filter(user => user.dog === true).length;
     const dogCatOwner = catOwner + dogOwner
 
 
@@ -24,7 +23,6 @@ class ActivityOverview extends Component {
           <Activity numberOfUsers= {dogCatOwner} text="Own both Cat and Dog"/>
         </div>
       </div>
-
     )
   }
 }

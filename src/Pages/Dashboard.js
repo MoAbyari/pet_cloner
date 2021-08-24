@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './App.css';
-import ActivityOverview from '../Pages/ActivityOverview'
-import PetOwnership from '../Pages/PetOwnership'
-import Subscribers from '../Pages/Subscribers'
+import '../components/App.css';
+import ActivityOverview from '../components/ActivityOverview'
+import PetOwnership from '../components/PetOwnership'
+import Subscribers from '../components/Subscribers'
 import { db } from '../services/firebase.js'
 import Header from '../components/Header.js'
 const database = db.collection("Users");

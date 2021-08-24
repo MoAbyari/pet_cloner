@@ -1,6 +1,6 @@
 import './App.css';
 import LandingPage from './LandingPage.js'
-import Dashboard from './Dashboard'
+import Dashboard from '../Pages/Dashboard'
 
 import {
   BrowserRouter as Router,
