@@ -7,21 +7,29 @@ import { map } from 'underscore';
 class PetOwnership extends Component {
 
 
-  renderUsers =  () => {
+  renderCat =  () => {
     const user = this.props.allusers;
-    return user.map( (u) => {
-      return (
-        <h1> {u.email} </h1>
-      )
-    })
+    const catOwner = user.filter(user => user.cat == true);
+    return (
+      catOwner.length
+    )
+  }
 
+  renderDog =  () => {
+    const user = this.props.allusers;
+    const dogOwner = user.filter(user => user.dog == true);
+      return dogOwner.length
   }
 
 
   render () {
     return (
-      <div >
-        { this.renderUsers() }
+      <div className="site-card-border-less-wrapper">
+        <Card title="Pet ownership" bordered={false} style={{ width: 300 }}>
+          <p>Total Cat: { this.renderCat() }</p>
+          <p>Total Dog: { this.renderDog() }</p>
+          <p>Total : { this.renderDog() + this.renderCat() }</p>
+        </Card>
       </div>
     )
   }

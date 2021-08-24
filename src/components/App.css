@@ -4,7 +4,7 @@
   box-sizing: border-box;
 
 }
-body{    
+body{
     max-width: 1130px!important;
     margin: 0 auto;
   }
@@ -218,4 +218,11 @@ a.lessPadding{
 
 h4, h3, h2{
   margin-top:12px!important;
+}
+
+
+
+.site-card-border-less-wrapper {
+  padding: 30px;
+  background: #ececec;
 }
