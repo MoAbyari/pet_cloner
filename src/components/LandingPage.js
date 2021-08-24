@@ -1,7 +1,7 @@
 import './Water.css'
 import './App.css';
 import '../logoHoriz.png';
-import '../logoHoriz.png';
+import '../logoStacked.png';
 
 import '../icon1.png';
 import '../icon2.png';
@@ -13,6 +13,7 @@ import { db } from '../services/firebase.js'
 import Subscribe from './Subscribe.js'
 
 function LandingPage() {
+
   return (
    <main>
       <contianer>
@@ -53,12 +54,8 @@ function LandingPage() {
          </section>
          <section class="outline formStoriesRow">
             <div class="formCollumn outline">
-               <div class="formHeader">
-                  <div class="logoVert"> </div>
-                  <h3>Subscribe to our newsletter today</h3>
-                  <p>For all the latest scientific advances, EvaGen stories and events.  </p>
-               </div>
-               <Subscribe /> 
+  
+               <Subscribe/> 
             </div>
             <div class="storiesCollumn ">
                <h3>Our Stories</h3>

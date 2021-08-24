@@ -2,8 +2,8 @@
 
 * {
   box-sizing: border-box;
-
 }
+
 body{    
     max-width: 1130px!important;
     margin: 0 auto;
@@ -31,6 +31,9 @@ nav div *{
 
 }
 
+/* clamp(1rem, 10vw, 2rem);  */
+
+
 section{
 
 }
@@ -44,6 +47,7 @@ button.search{
   padding: 0 15px 3px 15px;
 }
 
+/* rem */
 .logoHoriz{
   background-image:url(../logoHoriz.png);
   height: 112px;
