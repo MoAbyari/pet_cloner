@@ -2,9 +2,13 @@
 
 * {
   box-sizing: border-box;
-
 }
+<<<<<<< HEAD
 body{
+=======
+
+body{    
+>>>>>>> 6afe41857cefdaf69137023f134b83e9cfae31a6
     max-width: 1130px!important;
     margin: 0 auto;
   }
@@ -31,6 +35,9 @@ nav div *{
 
 }
 
+/* clamp(1rem, 10vw, 2rem);  */
+
+
 section{
 
 }
@@ -44,6 +51,7 @@ button.search{
   padding: 0 15px 3px 15px;
 }
 
+/* rem */
 .logoHoriz{
   background-image:url(../logoHoriz.png);
   height: 112px;

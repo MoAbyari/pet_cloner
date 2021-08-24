@@ -7,7 +7,10 @@ const { Option } = Select;
 
 
 class Subscribe extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {submitted: false};
+  }
 
     onFinish = (values) => {
       console.log(values);
@@ -20,13 +23,18 @@ class Subscribe extends Component {
         dog: values.dog,
         cat: values.cat},
         {merge:true})
-
+      this.setState({submitted: true})
     }
-
 
   form = () => {
     return(
       <div className= "subscribe-container">
+        <div class="formHeader">
+              <div class="logoVert"> </div>
+              <h3>Subscribe to our newsletter today</h3>
+              <p>For all the latest scientific advances, EvaGen stories and events.  </p>
+          </div>
+
         <Form onFinish={this.onFinish}>
           <Form.Item
             name="firstName"
@@ -75,6 +83,10 @@ class Subscribe extends Component {
             <Select placeholder="State">
               <Option value="NSW">NSW</Option>
               <Option value="VIC">VIC</Option>
+              <Option value="TAZ">TAZ</Option>
+              <Option value="QLD">QLD</Option>
+              <Option value="SA">SA</Option>
+              <Option value="NT">NT</Option>
               <Option value="ACT">ACT</Option>
               <Option value="WA">WA</Option>
             </Select>
@@ -128,10 +140,21 @@ class Subscribe extends Component {
     )
   }
 
+  confirmation = () => {
+    return(      
+      <div className= "submitted-container">
+        <div class="logoVert"> </div>
+        <h2>Thank you for subscribing</h2>
+      </div>    
+    )
+  }
+
   render() {
       return(
         <div>
-          {this.form()}
+          { this.state.submitted ?  
+              this.confirmation() : this.form()
+          }
         </div>
       );
     }
