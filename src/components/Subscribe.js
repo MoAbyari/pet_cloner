@@ -122,7 +122,7 @@ class Subscribe extends Component {
             <Select>
               <Option aria-label="New South Wales" value="NSW">NSW</Option>
               <Option aria-label="Victoria" value="VIC">VIC</Option>
-              <Option aria-label="Tazmainia" value="TAZ">TAZ</Option>
+              <Option aria-label="Tazmainia" value="TAS">TAS</Option>
               <Option aria-label="Queensland" value="QLD">QLD</Option>
               <Option aria-label="South Australia" value="SA">SA</Option>
               <Option aria-label="Western Australia" value="WA">WA</Option>
